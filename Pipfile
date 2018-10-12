@@ -14,7 +14,7 @@ gym = "*"
 joblib = "*"
 "mpi4py" = "*"
 servoarray = "*"
-baselines = "*"
+baselines = {path = "./baselines", editable = true}
 
 [dev-packages]
 "flake8" = "*"

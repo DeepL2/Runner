@@ -18,11 +18,29 @@ class YamaXRealForwardWalk(gym.Env):
         self.sa.auto_clip(True)
         self.imu = mpu6050(imu_address)
 
+        self.stands = np.array([
+            0.3488,
+            2.4422,
+            1.5700,
+            2.0933,
+            1.3955,
+            1.3083,
+            1.7095,
+            2.0061,
+            1.8316,
+            1.7444,
+            2.0933,
+            1.3083,
+            0.6105,
+            2.5817
+            ])
+
     def _seed(self, seed=None):
         self.np_random, seed = gym.utils.seeding.np_random(seed)
         return [seed]
 
     def _reset(self):
+        self.sa[:14] = self.stands
         self.state = self.calc_state()
         return self.state # initial obs
 

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d5ef6bbaf1a7b9dda545360fca0fb10266fb9f1da29141339b7b7159da6bb7da"
+            "sha256": "dfaf08531bf7c1206904a3805c2be485239c6dd31d5e316006389141fcbe98c3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -360,12 +360,8 @@
             "version": "==3.0.0"
         },
         "mpu6050-raspberrypi": {
-            "hashes": [
-                "sha256:2bdc47d1aa2c1b7783d6bf37471ea2cb70f4979bb130d5321e9f23746b6779b1",
-                "sha256:4c8e64791950a25169a42052e97e938792ef869415e4b1dc26146b9af297c812"
-            ],
-            "index": "piwheels",
-            "version": "==1.1"
+            "git": "https://github.com/Tijndagamer/mpu6050",
+            "ref": "20351ad045604919b318de7474b5e22bc36989c3"
         },
         "mujoco-py": {
             "hashes": [
@@ -593,11 +589,11 @@
         },
         "servoarray": {
             "hashes": [
-                "sha256:930d327bee5325fbce73bcae905d536819e0414492a3c89f4d19d91bda5e1010",
-                "sha256:bb9eb8511b208d7e7fc57444df5893688388325f63556ff3261f03c555770739"
+                "sha256:41e82c425aada973cfb3179a952ba4fcb68c9b9d873deafd027a194bc7665581",
+                "sha256:85b3e3976e544f7704b1a83ac541587ce24e49247d2735747533309bd6b9130b"
             ],
             "index": "piwheels",
-            "version": "==0.1.1"
+            "version": "==0.3"
         },
         "six": {
             "hashes": [
@@ -605,6 +601,14 @@
                 "sha256:832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb"
             ],
             "version": "==1.11.0"
+        },
+        "smbus2": {
+            "hashes": [
+                "sha256:36a84a397f9f34f18b789ddbf52cb95597d25f2b1a36ab49601368b4c9e9a679",
+                "sha256:b8d943ffe74670be969b5be79f47df0f597e91e8e0df2bc0d57203b1c2cabf2b"
+            ],
+            "index": "piwheels",
+            "version": "==0.2.1"
         },
         "tensorboard": {
             "hashes": [
@@ -671,7 +675,7 @@
                 "sha256:9fa1f772f1a2df2bd00ddb4fa57e1cc349301e1facb98fbe62329803a9ff1196",
                 "sha256:d215f4520a1ba1851a3c00ba2b4122665cd3d6b0834d2ba2816198b1e3024a0e"
             ],
-            "markers": "python_version != '3.0.*' and python_version != '3.1.*' and python_version != '3.2.*' and python_version >= '2.7' and python_version != '3.3.*'",
+            "markers": "python_version >= '3'",
             "version": "==0.32.1"
         }
     },

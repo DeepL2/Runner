@@ -14,8 +14,9 @@ gym = "*"
 joblib = "*"
 "mpi4py" = "*"
 servoarray = "==0.3"
-mpu6050-raspberrypi = "*"
 baselines = {path = "./baselines", editable = true}
+"mpu6050-raspberrypi" = {git = "https://github.com/Tijndagamer/mpu6050", ref = "python3-dev"}
+"smbus2" = "*"
 
 [dev-packages]
 "flake8" = "*"

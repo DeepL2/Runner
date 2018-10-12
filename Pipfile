@@ -13,7 +13,7 @@ tensorflow = "*"
 gym = "*"
 joblib = "*"
 "mpi4py" = "*"
-servoarray = "*"
+servoarray = "==0.3"
 mpu6050-raspberrypi = "*"
 baselines = {path = "./baselines", editable = true}
 

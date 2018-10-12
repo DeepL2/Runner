@@ -11,6 +11,10 @@ def main():
     args, unknown_args = arg_parser.parse_known_args()
     extra_args = parse_cmdline_kwargs(unknown_args)
 
+    args.num_timesteps = 0
+    args.play = True
+    args.env = 'YamaXRealForwardWalk-v0'
+
     model, env = train(args, extra_args)
     env.close()
 
@@ -30,3 +34,6 @@ def main():
             obs = env.reset()
 
     env.close()
+
+if __name__ == '__main__':
+    main()

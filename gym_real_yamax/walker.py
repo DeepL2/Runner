@@ -1,4 +1,5 @@
-import gym
+import gym, gym.spaces, gym.utils, gym.utils.seeding
+import numpy as np
 
 class YamaXRealForwardWalk(gym.Env):
     def __init__(self, action_dim=14, obs_dim=14+3):
@@ -9,12 +10,12 @@ class YamaXRealForwardWalk(gym.Env):
         self._seed()
 
     def _seed(self, seed=None):
-        self.np_random, seed = seeding.np_random(seed)
+        self.np_random, seed = gym.utils.seeding.np_random(seed)
         return [seed]
 
     def _reset(self):
         return None # initial obs
 
-    def _step(action):
+    def _step(self, action):
         return None # state, reward, done, info
 

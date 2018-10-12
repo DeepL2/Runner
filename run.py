@@ -1,3 +1,5 @@
+import gym_real_yamax
+
 from baselines.run import build_env, train, parse_cmdline_kwargs
 from baselines.common.cmd_util import common_arg_parser
 

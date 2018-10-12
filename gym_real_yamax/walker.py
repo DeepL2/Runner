@@ -15,6 +15,7 @@ class YamaXRealForwardWalk(gym.Env):
         self._seed()
 
         self.sa = ServoArray(1, sa_address, min_pulse, max_pulse)
+        self.sa.auto_clip(True)
         self.imu = mpu6050(imu_address)
 
     def _seed(self, seed=None):
@@ -46,7 +47,6 @@ class YamaXRealForwardWalk(gym.Env):
         return self.sa[:14]
 
     def apply_action(self, action):
-        applied = [self.sa[i] + action[i] for i in range(len(self.sa))]
-        self.sa[:14] = list(np.clip(applied, -math.pi/2, math.pi/2))
+        self.sa[:14] = self.sa[:14] + action
 
 

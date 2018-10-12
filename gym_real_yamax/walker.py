@@ -49,7 +49,7 @@ class YamaXRealForwardWalk(gym.Env):
 
         self.state = self.calc_state()
 
-        return np.array(self.state), 0, False, {} # state, reward, done, info
+        return self.state, 0, False, {} # state, reward, done, info
 
     def _render(self, mode, close):
         return
@@ -59,7 +59,7 @@ class YamaXRealForwardWalk(gym.Env):
         roll  = math.atan2(acc['y'], math.sqrt(acc['x']**2 + acc['z']**2))
         pitch = math.atan2(acc['x'], math.sqrt(acc['y']**2 + acc['z']**2))
         yaw   = math.atan2(acc['z'], math.sqrt(acc['x']**2 + acc['z']**2))
-        return self.joint_states() + [roll, pitch, yaw]
+        return np.append(self.joint_states(), [roll, pitch, yaw])
 
     def joint_states(self):
         return self.sa[:14]

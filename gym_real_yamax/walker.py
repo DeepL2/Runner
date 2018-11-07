@@ -19,21 +19,18 @@ class YamaXRealForwardWalk(gym.Env):
         self.imu = ADXL345(imu_address)
 
         self.stands = np.array([
-            -1.2211,
-             0.8722,
-             0,
-             0.5233,
-            -0.1744,
-            -0.2616,
-             0.1395,
-             0.4361,
-             0.2616,
-             0.1744,
-             0.5233,
-            -0.2616,
-            -0.9594,
-             1.0117
-            ])
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+        ])
+        self.servo_states = self.stands
 
     def _seed(self, seed=None):
         self.np_random, seed = gym.utils.seeding.np_random(seed)

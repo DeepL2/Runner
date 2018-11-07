@@ -37,7 +37,9 @@ class YamaXRealForwardWalk(gym.Env):
         return [seed]
 
     def _reset(self):
-        self.sa[:14] = self.stands
+        self.servo_states = self.stands
+        self.apply_action([0] * len(self.servo_states))
+
         self.state = self.calc_state()
         return self.state # initial obs
 
@@ -59,9 +61,12 @@ class YamaXRealForwardWalk(gym.Env):
         return np.append(self.joint_states(), [roll, pitch, yaw])
 
     def joint_states(self):
-        return self.sa[:14]
+        return self.servo_states
 
     def apply_action(self, action):
-        self.sa[:14] = self.sa[:14] + action
+        action = np.array(action)
+        for (servo, s, a) in zip(self.servos, self.servo_states, action):
+            servo.set_position(s + a)
+        self.servo_states += action
 
 

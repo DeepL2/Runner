@@ -9,14 +9,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-tensorflow = "*"
+tensorflow = "!=1.12.0"
 gym = "*"
 joblib = "*"
 "mpi4py" = "*"
-servoarray = "==0.4"
+servoarray = ">=0.4"
 baselines = {path = "./baselines", editable = true}
-"mpu6050-raspberrypi" = {git = "https://github.com/Tijndagamer/mpu6050", ref = "python3-dev"}
 "smbus2" = "*"
+icsservo = "*"
+"adafruit-adxl345" = "*"
 
 [dev-packages]
 "flake8" = "*"

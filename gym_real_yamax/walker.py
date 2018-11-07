@@ -1,22 +1,22 @@
 import gym, gym.spaces, gym.utils, gym.utils.seeding
 import numpy as np
 
-from servoarray import ServoArray
-from mpu6050 import mpu6050
+from icsservo import IOProvider
+from Adafruit_ADXL345 import ADXL345
 
 import math
 
 class YamaXRealForwardWalk(gym.Env):
-    def __init__(self, action_dim=14, obs_dim=14+3, imu_address=0x68, sa_address=0x40, min_pulse=95, max_pulse=425):
+    def __init__(self, action_dim=14, obs_dim=14+3, imu_address=0x54, ics_port="/dev/serial0", ics_en=26):
         high = np.ones([action_dim])
         self.action_space = gym.spaces.Box(-high, high)
         high = np.inf*np.ones([obs_dim])
         self.observation_space = gym.spaces.Box(-high, high)
         self._seed()
 
-        self.sa = ServoArray(1, sa_address, min_pulse, max_pulse)
-        self.sa.auto_clip(True)
-        self.imu = mpu6050(imu_address)
+        self.ics_io = IOProvider(ics_port, ics_en)
+        self.servos = [self.ics_io.servo(i) for i in range(10)]
+        self.imu = ADXL345(imu_address)
 
         self.stands = np.array([
             -1.2211,

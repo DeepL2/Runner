@@ -7,15 +7,15 @@ from Adafruit_ADXL345 import ADXL345
 import math
 
 class YamaXRealForwardWalk(gym.Env):
-    def __init__(self, action_dim=14, obs_dim=14+3, imu_address=0x54, ics_port="/dev/serial0", ics_en=26):
-        high = np.ones([action_dim])
+    def __init__(self, num_joints=10, imu_address=0x54, ics_port="/dev/serial0", ics_en=26):
+        high = np.ones([num_joints])
         self.action_space = gym.spaces.Box(-high, high)
-        high = np.inf*np.ones([obs_dim])
+        high = np.inf*np.ones([num_joints + 3])
         self.observation_space = gym.spaces.Box(-high, high)
         self._seed()
 
         self.ics_io = IOProvider(ics_port, ics_en)
-        self.servos = [self.ics_io.servo(i) for i in range(10)]
+        self.servos = [self.ics_io.servo(i) for i in range(num_joints)]
         self.imu = ADXL345(imu_address)
 
         self.stands = np.array([

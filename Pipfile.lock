@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a9f0b7262c31f662f66be7c1b4c8e073e8a9eb1a990ad88f1c6805dc4b1bcba0"
+            "sha256": "638ffc8d5f706eae428e03699d4c8cf3c4f2535b3725e465715a64eb97377a78"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -306,11 +306,11 @@
         },
         "icsservo": {
             "hashes": [
-                "sha256:cff8647a64398086bb6d2aca92e4cb50f403815e8a2ec191e3c1108455ed66dc",
-                "sha256:faa311f08e220db1014e06c7e49d15b81ebae5cf500facf314b6e6eb2b6fbcd8"
+                "sha256:6ae2648c3c50145ff46d6542f57f3beaa19ae8d0655da365be7b075522284bb0",
+                "sha256:b35a6b84befa8600f7753c6de4d8291a44734c5ae9c3ccc5e1e3821d0f89205a"
             ],
             "index": "piwheels",
-            "version": "==0.1"
+            "version": "==0.2"
         },
         "idna": {
             "hashes": [
@@ -389,9 +389,9 @@
         },
         "mujoco-py": {
             "hashes": [
-                "sha256:0bd85ab0f4c992dc6460dffcfb89a6ab943b85f426c62dfde7c116e8005471d4"
+                "sha256:62fd164401e576a9e7026d81a9ff23316c32b68cea4c5f671423aa073b3da2be"
             ],
-            "version": "==1.50.1.67"
+            "version": "==1.50.1.68"
         },
         "numpy": {
             "hashes": [
@@ -705,7 +705,7 @@
                 "sha256:196c9842d79262bb66fcf59faa4bd0deb27da911dbc7c6cdca931080eb1f0783",
                 "sha256:c93e2d711f5f9841e17f53b0e6c0ff85593f3b416b6eec7a9452041a59a42688"
             ],
-            "markers": "python_version != '3.1.*' and python_version != '3.2.*' and python_version >= '2.7' and python_version != '3.0.*' and python_version != '3.3.*'",
+            "markers": "python_version >= '3'",
             "version": "==0.32.2"
         }
     },

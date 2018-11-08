@@ -16,7 +16,7 @@ joblib = "*"
 servoarray = ">=0.4"
 baselines = {path = "./baselines", editable = true}
 "smbus2" = "*"
-icsservo = "*"
+icsservo = ">=0.2"
 "adafruit-adxl345" = "*"
 
 [dev-packages]

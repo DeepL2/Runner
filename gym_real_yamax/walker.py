@@ -28,16 +28,16 @@ class YamaXRealForwardWalk(gym.Env):
         self.imu = ADXL345(imu_address)
 
         self.stands = np.array([
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
         ])
         self.servo_states = self.stands
 

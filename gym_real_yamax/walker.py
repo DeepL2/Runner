@@ -6,6 +6,15 @@ from Adafruit_ADXL345 import ADXL345
 
 import math
 
+_ioprovider = None
+
+def get_io(*args, **kwargs):
+    global _ioprovider
+    if _ioprovider is None:
+        _ioprovider = IOProvider(*args, **kwargs)
+    return _ioprovider
+
+
 class YamaXRealForwardWalk(gym.Env):
     def __init__(self, num_joints=10, imu_address=0x1d, ics_port="/dev/serial0", ics_en=26):
         high = np.ones([num_joints])
@@ -14,7 +23,7 @@ class YamaXRealForwardWalk(gym.Env):
         self.observation_space = gym.spaces.Box(-high, high)
         self._seed()
 
-        self.ics_io = IOProvider(ics_port, ics_en)
+        self.ics_io = get_io(ics_port, ics_en)
         self.servos = [self.ics_io.servo(i) for i in range(num_joints)]
         self.imu = ADXL345(imu_address)
 

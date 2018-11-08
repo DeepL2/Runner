@@ -54,7 +54,7 @@ class YamaXRealForwardWalk(gym.Env):
         return
 
     def calc_state(self):
-        x, y, z = accel.read()
+        x, y, z = self.imu.read()
         roll  = math.atan2(y, math.sqrt(x**2 + z**2))
         pitch = math.atan2(x, math.sqrt(y**2 + z**2))
         yaw   = math.atan2(z, math.sqrt(x**2 + z**2))

@@ -62,6 +62,9 @@ class YamaXRealForwardWalk(gym.Env):
     def _render(self, mode, close):
         return
 
+    def _close(self):
+        self.ics_io.close()
+
     def calc_state(self):
         x, y, z = self.imu.read()
         roll  = math.atan2(y, math.sqrt(x**2 + z**2))
